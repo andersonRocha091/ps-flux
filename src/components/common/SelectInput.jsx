@@ -18,9 +18,11 @@ function SelectInput(props) {
           className="form-control"
           onChange={props.onChange}
         >
-          <option value="" />
+          <option key={0} value="" />
           {props.options.map((item) => (
-            <option value={item.value}>{item.label}</option>
+            <option key={item.value} value={item.value}>
+              {item.label}
+            </option>
           ))}
         </select>
       </div>

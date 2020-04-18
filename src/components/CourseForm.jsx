@@ -8,7 +8,7 @@ export default (props) => {
     { value: 2, label: "Scott Allen" },
   ];
   return (
-    <form>
+    <form onSubmit={props.onSubmit}>
       <TextInput
         id="title"
         name="title"
@@ -19,7 +19,7 @@ export default (props) => {
 
       <SelectInput
         id="author"
-        name="author"
+        name="authorId"
         label="Author"
         value={props.course.authorId || ""}
         className="form-control"

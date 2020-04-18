@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import CourseForm from "./CourseForm";
+import * as courseApi from "../api/courseApi";
 
 export default (props) => {
   const [course, setCourse] = useState({
@@ -19,10 +20,21 @@ export default (props) => {
     setCourse(updatedCourse);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    courseApi.saveCourse(course).then(() => {
+      props.history.push("/courses");
+    });
+  }
+
   return (
     <>
       <h2>Manage Course</h2>
-      <CourseForm course={course} onChange={handleChange} />
+      <CourseForm
+        course={course}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      />
     </>
   );
 };
