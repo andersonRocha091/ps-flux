@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
@@ -8,9 +9,12 @@ import CoursesPage from "./CoursesPage";
 import NotFoundPage from "./NotFoundPage";
 import ManageCoursePage from "./ManageCoursePage";
 
+import "react-toastify/dist/ReactToastify.min.css";
+
 function App() {
   return (
     <div className="container-fluid">
+      <ToastContainer autoClose={3000} />
       <Header />
       <Switch>
         <Route path="/" component={HomePage} exact />

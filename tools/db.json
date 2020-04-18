@@ -72,43 +72,19 @@
     },
     {
       "id": 11,
-      "slug": "my-first-course-awesome",
-      "title": "my first course awesome",
+      "slug": "my-first-awesome-ourse",
+      "title": "My first awesome ourse",
       "authorId": 1,
       "category": "Front-end",
-      "createdAt": 1587244126863
+      "createdAt": 1587245478425
     },
     {
       "id": 12,
-      "slug": "my-second-awesome-course",
-      "title": "My second awesome course",
-      "authorId": 2,
-      "category": "front-end2",
-      "createdAt": 1587244166096
-    },
-    {
-      "id": 13,
-      "slug": "my-second-awesome-course",
-      "title": "My second awesome course",
-      "authorId": 2,
-      "category": "front-end2",
-      "createdAt": 1587244169386
-    },
-    {
-      "id": 14,
-      "slug": "my-second-awesome-course",
-      "title": "My second awesome course",
-      "authorId": 2,
-      "category": "front-end2",
-      "createdAt": 1587244171219
-    },
-    {
-      "id": 15,
-      "slug": "reactjs-with-flux",
-      "title": "ReactJS with Flux",
+      "slug": "my-first-course",
+      "title": "My first course",
       "authorId": 2,
       "category": "Front-end",
-      "createdAt": 1587244451467
+      "createdAt": 1587245515566
     }
   ],
   "authors": [
