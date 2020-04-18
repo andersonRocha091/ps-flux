@@ -1,7 +1,12 @@
 import React from "react";
 import TextInput from "./common/TextInput";
+import SelectInput from "./common/SelectInput";
 
 export default (props) => {
+  const authorOptions = [
+    { value: 1, label: "Cory House" },
+    { value: 2, label: "Scott Allen" },
+  ];
   return (
     <form>
       <TextInput
@@ -12,22 +17,15 @@ export default (props) => {
         onChange={props.onChange}
       />
 
-      <div className="form-group">
-        <label htmlFor="author">Author</label>
-        <div className="field">
-          <select
-            id="author"
-            name="authorId"
-            value={props.course.authorId || ""}
-            className="form-control"
-            onChange={props.onChange}
-          >
-            <option value="" />
-            <option value="1">Cory House</option>
-            <option value="2">Scott Allen</option>
-          </select>
-        </div>
-      </div>
+      <SelectInput
+        id="author"
+        name="author"
+        label="Author"
+        value={props.course.authorId || ""}
+        className="form-control"
+        options={authorOptions}
+        onChange={props.onChange}
+      />
 
       <TextInput
         id="category"
