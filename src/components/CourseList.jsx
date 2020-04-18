@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default (props) => {
   return (
-    <table className="table">
+    <table style={{ marginTop: 10 }} className="table">
       <thead>
         <tr>
           <th>Title</th>
