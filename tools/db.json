@@ -85,6 +85,14 @@
       "authorId": 2,
       "category": "Front-end",
       "createdAt": 1587245515566
+    },
+    {
+      "id": 13,
+      "slug": "flux-is-life",
+      "title": "Flux is life",
+      "authorId": 2,
+      "category": "Front-end",
+      "createdAt": 1587246943403
     }
   ],
   "authors": [
