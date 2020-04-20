@@ -36,7 +36,10 @@ Dispatcher.register((action) => {
       _courses.push(action.course);
       store.emitChange();
       break;
-
+    case ActionTypes.LOAD_COURSES:
+      _courses = action.courses;
+      store.emitChange();
+      break;
     default:
   }
 });
