@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 import CourseForm from "./CourseForm";
@@ -13,6 +13,15 @@ export default (props) => {
     authorId: null,
     category: "",
   });
+
+  //Este metodo sera sempre executando e especificando o slug
+  // no array, apenas quando ele foSr alterado executaremos
+  useEffect(() => {
+    const slug = props.match.params.slug;
+    if (slug) {
+      courseApi.getCourseBySlug(slug).then((_course) => setCourse(_course));
+    }
+  }, [props.match.params.slug]);
 
   function handleChange(event) {
     const updatedCourse = {

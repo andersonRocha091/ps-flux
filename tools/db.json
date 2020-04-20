@@ -69,30 +69,6 @@
       "slug": "web-components-shadow-dom",
       "authorId": 1,
       "category": "HTML5"
-    },
-    {
-      "id": 11,
-      "slug": "my-first-awesome-ourse",
-      "title": "My first awesome ourse",
-      "authorId": 1,
-      "category": "Front-end",
-      "createdAt": 1587245478425
-    },
-    {
-      "id": 12,
-      "slug": "my-first-course",
-      "title": "My first course",
-      "authorId": 2,
-      "category": "Front-end",
-      "createdAt": 1587245515566
-    },
-    {
-      "id": 13,
-      "slug": "flux-is-life",
-      "title": "Flux is life",
-      "authorId": 2,
-      "category": "Front-end",
-      "createdAt": 1587246943403
     }
   ],
   "authors": [
