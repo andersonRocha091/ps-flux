@@ -8,7 +8,7 @@ export function saveCourse(course) {
     dispatcher.dispatch({
       //action
       actionType: actionTypes.CREATE_COURSE,
-      course: saveCourse,
+      course: savedCourse,
     });
   });
 }

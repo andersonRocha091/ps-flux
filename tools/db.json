@@ -69,6 +69,54 @@
       "slug": "web-components-shadow-dom",
       "authorId": 1,
       "category": "HTML5"
+    },
+    {
+      "id": 11,
+      "slug": "primeiro-curso-adicionado-com-flux",
+      "title": "Primeiro curso adicionado com Flux",
+      "authorId": 1,
+      "category": "Front-end",
+      "createdAt": 1587352389721
+    },
+    {
+      "id": 12,
+      "slug": "segundo-curso-added-com-fluc",
+      "title": "Segundo curso added com fluc",
+      "authorId": 1,
+      "category": "TEste",
+      "createdAt": 1587352580862
+    },
+    {
+      "id": 13,
+      "slug": "terceiro-curso",
+      "title": "Terceiro curso",
+      "authorId": 2,
+      "category": "asdads",
+      "createdAt": 1587352667899
+    },
+    {
+      "id": 14,
+      "slug": "sdfasdfasdf",
+      "title": "sdfasdfasdf",
+      "authorId": 2,
+      "category": "asdfasdf",
+      "createdAt": 1587352714886
+    },
+    {
+      "id": 15,
+      "slug": "asdfafweqr1324314",
+      "title": "asdfafweqr1324314",
+      "authorId": 2,
+      "category": "weqfdsasdfasdf",
+      "createdAt": 1587352846666
+    },
+    {
+      "id": 16,
+      "slug": "asdfasdfasdfasdfhthrt",
+      "title": "asdfasdfasdfasdfhthrt",
+      "authorId": 2,
+      "category": "retr343",
+      "createdAt": 1587352929282
     }
   ],
   "authors": [
