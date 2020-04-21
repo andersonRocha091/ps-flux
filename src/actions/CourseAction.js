@@ -7,7 +7,9 @@ export function saveCourse(course) {
   return courseApi.saveCourse(course).then((savedCourse) => {
     dispatcher.dispatch({
       //action
-      actionType: actionTypes.CREATE_COURSE,
+      actionType: course.id
+        ? actionTypes.UPDATE_COURSE
+        : actionTypes.CREATE_COURSE,
       course: savedCourse,
     });
   });
