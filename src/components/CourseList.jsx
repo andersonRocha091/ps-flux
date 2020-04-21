@@ -9,6 +9,7 @@ export default (props) => {
           <th>Title</th>
           <th>Author ID</th>
           <th>Category</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,17 @@ export default (props) => {
             </td>
             <td>{course.authorId}</td>
             <td>{course.category}</td>
+            <td>
+              <button
+                type="button"
+                className="btn btn-outline-danger"
+                onClick={() => {
+                  props.onDelete(course.id);
+                }}
+              >
+                Remove
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
