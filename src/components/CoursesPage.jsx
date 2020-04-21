@@ -30,7 +30,6 @@ function CoursesPage() {
   }
 
   function onAuthorChange() {
-    debugger;
     setAuthors(AuthorStore.getAuthors());
   }
 
