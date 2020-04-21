@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 import CourseForm from "./CourseForm";
+import NotFoundPage from "./NotFoundPage";
+
 import * as CourseActions from "../actions/CourseAction";
 import CourseStore from "../stores/CourseStore";
 
@@ -62,7 +64,7 @@ export default (props) => {
     return Object.keys(_errors).length === 0;
   }
 
-  return (
+  return course ? (
     <>
       <h2>Manage Course</h2>
       <CourseForm
@@ -71,6 +73,10 @@ export default (props) => {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
+    </>
+  ) : (
+    <>
+      <NotFoundPage />
     </>
   );
 };
