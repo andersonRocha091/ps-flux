@@ -5,11 +5,14 @@ import CourseForm from "./CourseForm";
 import NotFoundPage from "./NotFoundPage";
 
 import * as CourseActions from "../actions/CourseAction";
+import * as AuthorActions from "../actions/AuthorActions";
 import CourseStore from "../stores/CourseStore";
+import AuthorStore from "../stores/AuthorsStore";
 
 export default (props) => {
   const [errors, setErrors] = useState({});
   const [courses, setCourses] = useState(CourseStore.getCourses());
+  const [authors, setAuthors] = useState(AuthorStore.getAuthors());
   const [course, setCourse] = useState({
     id: null,
     slug: "",
@@ -22,18 +25,30 @@ export default (props) => {
   // no array, apenas quando ele foSr alterado executaremos
   useEffect(() => {
     CourseStore.addChangeListener(onChange);
+    AuthorStore.addChangeListener(onAuthorChange);
     const slug = props.match.params.slug;
 
     if (courses.length === 0) {
-      CourseActions.loadCourses();
+      CourseActions.loadCourses().then(() => {
+        if (authors.length === 0) {
+          AuthorActions.loadAuthors();
+        }
+      });
     } else if (slug) {
       setCourse(CourseStore.getCoursesBySlug(slug));
     }
-    return () => CourseStore.removeChangeListener(onChange);
-  }, [courses.length, props.match.params.slug]);
+    return () => {
+      CourseStore.removeChangeListener(onChange);
+      AuthorStore.removeChangeListener(onAuthorChange);
+    };
+  }, [courses.length, props.match.params.slug, authors.length]);
 
   function onChange() {
     setCourses(CourseStore.getCourses());
+  }
+
+  function onAuthorChange() {
+    setAuthors(AuthorStore.getAuthors());
   }
 
   function handleChange(event) {
@@ -70,6 +85,7 @@ export default (props) => {
       <CourseForm
         errors={errors}
         course={course}
+        authors={authors}
         onChange={handleChange}
         onSubmit={handleSubmit}
       />

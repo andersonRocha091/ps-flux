@@ -16,8 +16,11 @@ function CoursesPage() {
   useEffect(() => {
     CourseStore.addChangeListener(onChange);
     AuthorStore.addChangeListener(onAuthorChange);
-    if (CourseStore.getCourses().length === 0) loadCourses();
-    if (AuthorStore.getAuthors().length === 0) loadAuthors();
+    if (CourseStore.getCourses().length === 0) {
+      loadCourses().then(() => {
+        if (AuthorStore.getAuthors().length === 0) loadAuthors();
+      });
+    }
 
     return () => {
       CourseStore.removeChangeListener(onChange);

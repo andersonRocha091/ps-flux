@@ -7,7 +7,7 @@ export default (props) => {
       let author = props.authors.filter((_author) => {
         return _author.id === parseInt(authorId, 10);
       });
-      return author ? author[0].name : "Anonymous";
+      return author.length > 0 ? author[0].name : "Anonymous";
     }
   }
   return (

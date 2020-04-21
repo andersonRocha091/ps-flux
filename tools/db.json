@@ -4,14 +4,14 @@
       "id": 1,
       "title": "Securing React Apps with Auth0",
       "slug": "react-auth0-authentication-security",
-      "authorId": 2,
+      "authorId": 3,
       "category": "JavaScript"
     },
     {
       "id": 2,
       "title": "React: The Big Picture",
       "slug": "react-big-picture",
-      "authorId": 1,
+      "authorId": 2,
       "category": "JavaScript"
     },
     {
@@ -69,6 +69,14 @@
       "slug": "web-components-shadow-dom",
       "authorId": 1,
       "category": "HTML5"
+    },
+    {
+      "id": 11,
+      "slug": "teste-se-o-inser-ainda-func",
+      "title": "Teste se o inser ainda func",
+      "authorId": 2,
+      "category": "Front-end",
+      "createdAt": 1587513449392
     }
   ],
   "authors": [

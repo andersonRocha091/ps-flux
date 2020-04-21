@@ -6,7 +6,7 @@ function SelectInput(props) {
   if (props.error.length > 0) {
     wrapperClass += " has-error";
   }
-
+  debugger;
   return (
     <div className={wrapperClass}>
       <label htmlFor={props.id}>{props.label}</label>
@@ -20,8 +20,8 @@ function SelectInput(props) {
         >
           <option key={0} value="" />
           {props.options.map((item) => (
-            <option key={item.value} value={item.value}>
-              {item.label}
+            <option key={item.id} value={item.id}>
+              {item.name}
             </option>
           ))}
         </select>
