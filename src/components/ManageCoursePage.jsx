@@ -7,6 +7,7 @@ import CourseStore from "../stores/CourseStore";
 
 export default (props) => {
   const [errors, setErrors] = useState({});
+  const [courses, setCourses] = useState(CourseStore.getCourses());
   const [course, setCourse] = useState({
     id: null,
     slug: "",
@@ -18,11 +19,20 @@ export default (props) => {
   //Este metodo sera sempre executando e especificando o slug
   // no array, apenas quando ele foSr alterado executaremos
   useEffect(() => {
+    CourseStore.addChangeListener(onChange);
     const slug = props.match.params.slug;
-    if (slug) {
+
+    if (courses.length === 0) {
+      CourseActions.loadCourses();
+    } else if (slug) {
       setCourse(CourseStore.getCoursesBySlug(slug));
     }
-  }, [props.match.params.slug]);
+    return () => CourseStore.removeChangeListener(onChange);
+  }, [courses.length, props.match.params.slug]);
+
+  function onChange() {
+    setCourses(CourseStore.getCourses());
+  }
 
   function handleChange(event) {
     const updatedCourse = {
