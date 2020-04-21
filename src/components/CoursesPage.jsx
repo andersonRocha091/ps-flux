@@ -4,19 +4,34 @@ import { toast } from "react-toastify";
 
 import CourseList from "./CourseList";
 import CourseStore from "../stores/CourseStore";
+import AuthorStore from "../stores/AuthorsStore";
+
 import { loadCourses, deleteCourse } from "../actions/CourseAction";
+import { loadAuthors } from "../actions/AuthorActions";
 
 function CoursesPage() {
   const [courses, setCourses] = useState(CourseStore.getCourses());
+  const [authors, setAuthors] = useState(AuthorStore.getAuthors());
 
   useEffect(() => {
     CourseStore.addChangeListener(onChange);
+    AuthorStore.addChangeListener(onAuthorChange);
     if (CourseStore.getCourses().length === 0) loadCourses();
-    return () => CourseStore.removeChangeListener(onChange);
+    if (AuthorStore.getAuthors().length === 0) loadAuthors();
+
+    return () => {
+      CourseStore.removeChangeListener(onChange);
+      AuthorStore.removeChangeListener(onAuthorChange);
+    };
   }, []);
 
   function onChange() {
     setCourses(CourseStore.getCourses());
+  }
+
+  function onAuthorChange() {
+    debugger;
+    setAuthors(AuthorStore.getAuthors());
   }
 
   function handleDelete(courseId) {
@@ -31,7 +46,7 @@ function CoursesPage() {
       <Link className="btn btn-primary" to="/course">
         Add Course
       </Link>
-      <CourseList courses={courses} onDelete={handleDelete} />
+      <CourseList courses={courses} authors={authors} onDelete={handleDelete} />
     </>
   );
 }

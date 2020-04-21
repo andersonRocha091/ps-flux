@@ -2,6 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default (props) => {
+  function getAuthorName(authorId) {
+    if (props.authors.length > 0) {
+      let author = props.authors.filter((_author) => {
+        debugger;
+        return _author.id === parseInt(authorId, 10);
+      });
+      return author ? author[0].name : "Anonymous";
+    }
+  }
   return (
     <table style={{ marginTop: 10 }} className="table">
       <thead>
@@ -18,7 +27,7 @@ export default (props) => {
             <td>
               <Link to={"/course/" + course.slug}>{course.title}</Link>
             </td>
-            <td>{course.authorId}</td>
+            <td>{getAuthorName(course.authorId)}</td>
             <td>{course.category}</td>
             <td>
               <button
