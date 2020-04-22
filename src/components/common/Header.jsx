@@ -15,6 +15,10 @@ function Header() {
         Courses
       </NavLink>{" "}
       |{" "}
+      <NavLink activeStyle={activeStyle} to="/author">
+        Authors
+      </NavLink>
+      |{" "}
       <NavLink activeStyle={activeStyle} to="/about">
         About
       </NavLink>
