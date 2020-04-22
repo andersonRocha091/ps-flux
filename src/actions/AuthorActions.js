@@ -20,3 +20,12 @@ export function saveAuthor(author) {
     });
   });
 }
+
+export function deleteAuthor(id) {
+  return authorApi.deleteAuthor(id).then(() => {
+    dispatcher.dispatch({
+      actionType: ActionTypes.DELETE_AUTHOR,
+      id: id,
+    });
+  });
+}

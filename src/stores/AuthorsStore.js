@@ -36,6 +36,15 @@ Dispatcher.register((action) => {
       _authors = action.authors;
       store.emitChange();
       break;
+    case ActionTypes.DELETE_AUTHOR:
+      _authors = _authors.filter((author) => {
+        return author.id !== action.id;
+      });
+      store.emitChange();
+      break;
+    case ActionTypes.SAVE_AUTHORS:
+      _authors.push(action.author);
+      break;
     default:
   }
 });

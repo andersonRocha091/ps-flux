@@ -15,7 +15,7 @@ function Header() {
         Courses
       </NavLink>{" "}
       |{" "}
-      <NavLink activeStyle={activeStyle} to="/author">
+      <NavLink activeStyle={activeStyle} to="/authors">
         Authors
       </NavLink>
       |{" "}

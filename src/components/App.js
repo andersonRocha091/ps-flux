@@ -9,6 +9,7 @@ import CoursesPage from "./CoursesPage";
 import NotFoundPage from "./NotFoundPage";
 import ManageCoursePage from "./ManageCoursePage";
 import ManageAuthorPage from "./ManageAuthorsPage";
+import AuthorPage from "./AuthorsPage";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/courses" component={CoursesPage} />
         <Route path="/course/:slug" component={ManageCoursePage} />
         <Route path="/course" component={ManageCoursePage} />
+        <Route path="/authors" component={AuthorPage} />
         <Route path="/author" component={ManageAuthorPage} />
         <Redirect from="/about-page" to="about" />
         <Route component={NotFoundPage} />

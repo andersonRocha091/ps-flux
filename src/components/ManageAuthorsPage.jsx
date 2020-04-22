@@ -43,7 +43,7 @@ export default (props) => {
     event.preventDefault();
     if (!formIsValid()) return;
     AuthorActions.saveAuthor(author).then(() => {
-      props.history.push("/");
+      props.history.push("/authors");
       toast.success("Author successfully saved.");
     });
   }
