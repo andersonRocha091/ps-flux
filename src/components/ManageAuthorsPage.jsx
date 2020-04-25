@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import * as AuthorActions from "../actions/AuthorActions";
 import AuthorStore from "../stores/AuthorsStore";
 import AuthorForm from "./AuthorForm";
+import NotFoundPage from "./NotFoundPage";
 
 export default (props) => {
   const [errors, setErrors] = useState({});
@@ -54,7 +55,7 @@ export default (props) => {
     });
   }
 
-  return (
+  return author ? (
     <>
       <h1>Manage Authors</h1>
       <AuthorForm
@@ -63,6 +64,10 @@ export default (props) => {
         errors={errors}
         onChange={handleChange}
       />
+    </>
+  ) : (
+    <>
+      <NotFoundPage />
     </>
   );
 };
