@@ -14,8 +14,14 @@ export default (props) => {
   });
 
   useEffect(() => {
+    debugger;
     AuthorStore.addChangeListener(onChange);
     const id = props.match.params.id;
+    if (authors.length === 0) {
+      AuthorActions.loadAuthors();
+    } else if (id) {
+      setAuthor(AuthorStore.getAuthorsById(id));
+    }
   }, [props.match.params.id, authors.length]);
 
   function onChange() {

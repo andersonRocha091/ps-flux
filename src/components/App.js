@@ -25,6 +25,7 @@ function App() {
         <Route path="/course/:slug" component={ManageCoursePage} />
         <Route path="/course" component={ManageCoursePage} />
         <Route path="/authors" component={AuthorPage} />
+        <Route path="/author/:id" component={ManageAuthorPage} />
         <Route path="/author" component={ManageAuthorPage} />
         <Redirect from="/about-page" to="about" />
         <Route component={NotFoundPage} />

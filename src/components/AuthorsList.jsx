@@ -1,6 +1,5 @@
 import React from "react";
-
-// import { Container } from './styles';
+import { Link } from "react-router-dom";
 
 export default (props) => {
   return (
@@ -15,13 +14,10 @@ export default (props) => {
       <tbody>
         {props.authors.map((author) => (
           <tr key={author.id}>
+            <td>{author.id}</td>
             <td>
-              {
-                /* <Link to={"/course/" + course.slug}>{course.title}</Link> */
-                author.id
-              }
+              <Link to={"/author/" + author.id}>{author.name}</Link>
             </td>
-            <td>{author.name}</td>
             <td>
               <button
                 type="button"

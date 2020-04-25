@@ -17,6 +17,7 @@ function AuthorsPage() {
   }, []);
 
   function onChange() {
+    debugger;
     setAuthors(AuthorStore.getAuthors());
   }
 

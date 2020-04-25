@@ -31,6 +31,7 @@ class AuthorStore extends EventEmitter {
 const store = new AuthorStore();
 
 Dispatcher.register((action) => {
+  debugger;
   switch (action.actionType) {
     case ActionTypes.LOAD_AUTHORS:
       _authors = action.authors;
@@ -44,6 +45,14 @@ Dispatcher.register((action) => {
       break;
     case ActionTypes.SAVE_AUTHORS:
       _authors.push(action.author);
+      store.emitChange();
+      break;
+    case ActionTypes.UPDATE_AUTHOR:
+      debugger;
+      _authors = _authors.map((author) =>
+        author.id === action.author.id ? action.author : author
+      );
+      store.emitChange();
       break;
     default:
   }
